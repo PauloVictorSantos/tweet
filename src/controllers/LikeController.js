@@ -9,7 +9,9 @@ module.exports = {
         await tweet.save();
 
         req.io.emit('like', tweet);
+        //enviando um evento para todos os clientes
 
+        
         return res.json(tweet);
     }
 }

@@ -10,6 +10,7 @@ module.exports = {
         const tweet = await Tweet.create(req.body);
 
         req.io.emit('tweet', tweet);
+        //enviando um evento para todos os clientes
 
         return res.json(tweet);
     }
