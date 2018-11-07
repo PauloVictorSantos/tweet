@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+//permite que clientes acessem os recursos da aplicação
+
 
 const app = express();
 
@@ -21,8 +23,10 @@ app.use((req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
+//resposta retorna no formato json
 app.use(require('./routers'));
 
+//habilitando o frontend para acessar o ws e http
 server.listen(3000, () => {
     console.log('Server started on port 3000, ready');
 });
