@@ -5,9 +5,9 @@ const routers = express.Router();
 const TweetController = require('./controllers/TweetController');
 const LikeController = require('./controllers/LikeController');
 
-routers.get('/tweet', TweetController.index);
-routers.post('/tweet', TweetController.index);
+routers.get('/tweets', TweetController.index);
+routers.post('/tweets', TweetController.store);
 
-routers.post('/likes:id', LikeController.store);
+routers.post('/likes/:id', LikeController.store);
 
 module.exports = routers;
